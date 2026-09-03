@@ -1,0 +1,32 @@
+# Dependencies
+node_modules/
+
+# wrangler
+.wrangler/
+.dev.vars*
+!.dev.vars.example
+.env*
+!.env.example
+
+# Logs
+*.log
+npm-debug.log*
+
+# The shared shell is copied into each site by `npm run build` — app/ is the only
+# copy anyone edits, so these generated duplicates stay out of git.
+sites/*/public/index.html
+sites/*/public/app.js
+sites/*/public/styles.css
+
+# Raw video sources (drop files here; scripts/process-videos.mjs uploads them to R2,
+# it never commits them). Poster thumbnails still land in public/thumbs/ and ARE committed.
+sites/*/public/videos/
+
+# Video processing cache/staging (see scripts/process-videos.mjs)
+sites/*/.media-cache.json
+.video-staging/
+.backfill-staging/
+
+# scripts/retrofit-sequence.mjs's own backup/scratch artifacts
+sites/*/gallery.json.pre-retrofit-backup.json
+.retrofit-staging/

@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "booperandwoowoo-dev",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["wrangler", "dev", "--config", "sites/booperandwoowoo.com/wrangler.jsonc"],
+      "port": 8787
+    },
+    {
+      "name": "jeremyandtipsy-dev",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["wrangler", "dev", "--config", "sites/jeremyandtipsy.com/wrangler.jsonc"],
+      "port": 8788
+    }
+  ]
+}

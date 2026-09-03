@@ -1,0 +1,24 @@
+/**
+ * Per-site Worker config. Everything else about this site lives in site.json,
+ * which the build reads to generate public/index.html.
+ *
+ * The Worker name here MUST match the Worker in the Cloudflare dashboard that
+ * has this directory set as its build root, or the build is rejected.
+ */
+{
+	"$schema": "../../node_modules/wrangler/config-schema.json",
+	"name": "jeremyandtipsy-com",
+	"compatibility_date": "2026-08-06",
+	"assets": {
+		// Content lives here; the shared shell (index.html/app.js/styles.css) is
+		// copied in by `npm run build`, so this directory is only complete after a build.
+		"directory": "./public"
+	},
+	"observability": {
+		"enabled": true
+	},
+	"upload_source_maps": true,
+	"routes": [
+		{ "pattern": "jeremyandtipsy.com", "custom_domain": true }
+	]
+}
